@@ -31,12 +31,12 @@ function PainCardController($scope, $reactive, $location) {
 
    vm.newRegistration = () => {
       Session.set('registrationType', 'Pain');
-      $location.path("questionwizard");
+      $location.path("app/questionwizard");
    };
 
    vm.showGraphData = () => {
       Session.set('graphDataType', 'Pain');
-      $location.path("graphdata");
+      $location.path("app/graphdata");
    };
 
    vm.painType = () => {

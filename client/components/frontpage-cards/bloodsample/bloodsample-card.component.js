@@ -31,12 +31,12 @@ function BloodsampleCardController($scope, $reactive, $location) {
 
    vm.newRegistration = () => {
       Session.set('registrationType', 'Bloodsample');
-      $location.path("questionwizard");
+      $location.path("app/questionwizard");
    };
 
    vm.showGraphData = () => {
       Session.set('graphDataType', 'Bloodsample');
-      $location.path("graphdata")
+      $location.path("app/graphdata")
    };
 
    vm.alat = () => {

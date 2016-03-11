@@ -31,12 +31,12 @@ function MucositisCardController($scope, $reactive, $location) {
 
    vm.newRegistration = () => {
       Session.set('registrationType', 'Mucositis');
-      $location.path("questionwizard");
+      $location.path("app/questionwizard");
    };
 
    vm.showGraphData = () => {
       Session.set('graphDataType', 'Mucositis');
-      $location.path("graphdata")
+      $location.path("app/graphdata")
    };
 
    vm.diagnosis = (number) => {

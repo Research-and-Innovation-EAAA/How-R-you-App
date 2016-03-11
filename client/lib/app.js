@@ -8,7 +8,8 @@ angular
       'mgo-angular-wizard',
       'ionic-datepicker',
       'ionic-timepicker',
-      'nvd3'
+      'nvd3',
+      'pdf'
    ]);
 
 if (Meteor.isCordova) {

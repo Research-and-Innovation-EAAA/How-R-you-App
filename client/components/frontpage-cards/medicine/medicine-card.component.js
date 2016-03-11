@@ -30,12 +30,12 @@ function MedicineCardController($scope, $reactive, $location) {
 
    vm.newRegistration = () => {
       Session.set('registrationType', 'Medicine');
-      $location.path("questionwizard");
+      $location.path("app/questionwizard");
    };
 
    vm.showGraphData = () => {
       Session.set('graphDataType', 'Medicine');
-      $location.path("graphdata")
+      $location.path("app/graphdata")
    };
 
    vm.sixMP = () => {

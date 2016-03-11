@@ -4,19 +4,43 @@ angular.module('leukemiapp')
       // Ionic uses AngularUI Router which uses the concept of states
       // Learn more here: https://github.com/angular-ui/ui-router
       $stateProvider
-         .state('frontpage', {
+         .state('app', {
+            url: '/app',
+            templateUrl: 'client/components/side-menu/side-menu.html'
+         })
+         .state('app.frontpage', {
             url: '/frontpage',
-            templateUrl: 'client/components/frontpage/frontpage.html'
+            views: {
+               'menuContent': {
+                  templateUrl: 'client/components/frontpage/frontpage.html'
+               }
+            }
          })
-         .state('questionwizard', {
+         .state('app.questionwizard', {
             url: '/questionwizard',
-            templateUrl: 'client/components/wizard/question-wizard.html'
+            views: {
+               'menuContent': {
+                  templateUrl: 'client/components/wizard/question-wizard.html'
+               }
+            }
          })
-         .state('graphdata', {
+         .state('app.graphdata', {
             url: '/graphdata',
-            templateUrl: 'client/components/graph-data/graph-data.html'
+            views: {
+               'menuContent': {
+                  templateUrl: 'client/components/graph-data/graph-data.html'
+               }
+            }
+         })
+         .state('app.pdf', {
+            url: '/pdf',
+            views: {
+               'menuContent': {
+                  templateUrl: 'client/components/pdf-viewer/pdf-viewer-container.html'
+               }
+            }
          });
 
       // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/frontpage');
+      $urlRouterProvider.otherwise('/app/frontpage');
    });
