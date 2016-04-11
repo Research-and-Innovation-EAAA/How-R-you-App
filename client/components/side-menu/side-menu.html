@@ -14,23 +14,28 @@
 
    <ion-side-menu side="right">
       <ion-header-bar class="bar-stable">
-         <h1 class="title">Left</h1>
+         <h1 class="title">Behandlinger</h1>
       </ion-header-bar>
-      <ion-content>
-         <ion-list>
-            <ion-item menu-close href="/pdf/firstpdf.pdf">
-               PDF 1
-            </ion-item>
-            <ion-item menu-close href="#/app/search">
-               PDF 2
-            </ion-item>
-            <ion-item menu-close href="#/app/browse">
-               PDF 3
-            </ion-item>
-            <ion-item menu-close href="#/app/playlists">
-               PDF 4
-            </ion-item>
-         </ion-list>
-      </ion-content>
+      <div ng-controller="pdfController as vm">
+         <ion-content>
+            <ion-list>
+               <ion-item menu-close href="/pdf/standard_intensiv.pdf" target="_blank">
+                  Standard Intensiv
+               </ion-item>
+               <ion-item menu-close href="/pdf/intermediaer_intensiv.pdf" target="_blank">
+                  Intermediær Intensiv
+               </ion-item>
+               <ion-item menu-close href="/pdf/intermediaer_intensiv_cns3.pdf" target="_blank">
+                  Intermediær Intensiv + CNS3
+               </ion-item>
+               <ion-item menu-close href="/pdf/høj_intensiv.pdf" target="_blank">
+                  Høj Intensiv
+               </ion-item>
+               <!--<ion-item menu-close ng-click="vm.clickTester()">-->
+               <!--NG-click test-->
+               <!--</ion-item>-->
+            </ion-list>
+         </ion-content>
+      </div>
    </ion-side-menu>
 </ion-side-menus>

@@ -31,15 +31,15 @@ angular.module('leukemiapp')
                   templateUrl: 'client/components/graph-data/graph-data.html'
                }
             }
-         })
-         .state('app.pdf', {
-            url: '/pdf',
-            views: {
-               'menuContent': {
-                  templateUrl: 'client/components/pdf-viewer/pdf-viewer-container.html'
-               }
-            }
          });
+      //.state('app.pdf', {
+      //   url: '/pdf',
+      //   views: {
+      //      'menuContent': {
+      //         templateUrl: 'client/components/pdf-viewer/pdf-viewer-container.html'
+      //      }
+      //   }
+      //});
 
       // if none of the above states are matched, use this as the fallback
       $urlRouterProvider.otherwise('/app/frontpage');
