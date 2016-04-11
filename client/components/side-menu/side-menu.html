@@ -19,16 +19,16 @@
       <div ng-controller="pdfController as vm">
          <ion-content>
             <ion-list>
-               <ion-item menu-close href="/pdf/standard_intensiv.pdf" target="_blank">
+               <ion-item menu-close ng-click="vm.openUrl('/pdf/standard_intensiv.pdf')">
                   Standard Intensiv
                </ion-item>
-               <ion-item menu-close href="/pdf/intermediaer_intensiv.pdf" target="_blank">
+               <ion-item menu-close ng-click="vm.openUrl('/pdf/intermediaer_intensiv.pdf')">
                   Intermediær Intensiv
                </ion-item>
-               <ion-item menu-close href="/pdf/intermediaer_intensiv_cns3.pdf" target="_blank">
+               <ion-item menu-close ng-click="vm.openUrl('/pdf/intermediaer_intensiv_cns3.pdf')">
                   Intermediær Intensiv + CNS3
                </ion-item>
-               <ion-item menu-close href="/pdf/høj_intensiv.pdf" target="_blank">
+               <ion-item menu-close ng-click="vm.openUrl('/pdf/høj_intensiv.pdf')">
                   Høj Intensiv
                </ion-item>
                <!--<ion-item menu-close ng-click="vm.clickTester()">-->
