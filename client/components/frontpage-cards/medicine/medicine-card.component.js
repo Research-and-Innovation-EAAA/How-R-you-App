@@ -16,6 +16,7 @@ function MedicineCardController($scope, $reactive, $location) {
    vm.helpers({
       latestMedicineRegistration: () => {
          //var selectedDate = Session.get('selectedDate');
+         //TODO: replace collection name with Mongo.Collection.get("name")
          return Medicine.findOne(
             {
                //timestamp: {$lt: moment(selectedDate).toDate()}

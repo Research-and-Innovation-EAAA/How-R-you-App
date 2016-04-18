@@ -8,6 +8,7 @@ Meteor.publish("mucositisData", function () {
 });
 
 Meteor.publish("medicineData", function () {
+   //TODO: replace collection name with Mongo.Collection.get("name")
    return Medicine.find({
       $and: [
          {createdBy: this.userId},
