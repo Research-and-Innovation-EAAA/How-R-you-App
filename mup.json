@@ -48,3 +48,6 @@
   // Make it false when you deploy using a CI box.
   "enableUploadProgressBar": true
 }
+
+// Build native apps
+// meteor build ~/tmp/build/ --server https://www.leukemia.sundata.dk --mobile-settings settings.json
