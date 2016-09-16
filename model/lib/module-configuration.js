@@ -236,39 +236,39 @@ Modules = [
             iconUrl: "/mucositistransparent.png",
             barClass: "bar-energized"
         }
-    }
+    },
 
     //Arthritis pain module
-    /* {
-     name: "arthritis",
-     wizard: {
-     steps: [
-     {
-     stepName: "arthritis.pain",
-     stepTemplate: {
-     url: "client/components/wizard/templates/pain-scale-slider.html",
-     config: {
-     propertyName: "painScore",
-     minValue: 0,
-     maxValue: 10,
-     step: 0.5
-     }
-     },
-     validation: (registration) => {
-     return registration.painScore !== undefined;
-     }
-     }
-     ]
-     },
-     frontPage: {
-     properties: [
-     "painScore"
-     ],
-     propertyDescription: [
-     "arthritis.intensity"
-     ],
-     iconUrl: "/smertetransparent.png",
-     barClass: "bar-royal"
-     }
-     }*/
+    {
+        name: "arthritis",
+        wizard: {
+            steps: [
+                {
+                    stepName: "arthritis.pain",
+                    stepTemplate: {
+                        url: "client/components/wizard/templates/pain-scale-slider.html",
+                        config: {
+                            propertyName: "painScore",
+                            minValue: 0,
+                            maxValue: 10,
+                            step: 0.5
+                        }
+                    },
+                    validation: (registration) => {
+                        return registration.painScore !== undefined;
+                    }
+                }
+            ]
+        },
+        frontPage: {
+            properties: [
+                "painScore"
+            ],
+            propertyDescription: [
+                "arthritis.intensity"
+            ],
+            iconUrl: "/smertetransparent.png",
+            barClass: "bar-royal"
+        }
+    }
 ];

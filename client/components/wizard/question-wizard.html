@@ -4,7 +4,7 @@
 
             <ion-content id="wizard-template" class="padding default-background"
                          delegate-handle="wizardStepContent">
-                <div ng-include="qwiz.modules[qwiz.dataType][qwiz.steps[qwiz.stepNumber]]"
+                <div ng-include="qwiz.template"
                      onload="qwiz.stepLoaded()">
                 </div>
             </ion-content>

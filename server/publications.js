@@ -122,4 +122,12 @@
             }
         );
     });
+
+    Meteor.publish("customModules", function () {
+        return CustomModules.find(
+            {
+                // TODO add only for this user
+            }
+        );
+    });
 })();

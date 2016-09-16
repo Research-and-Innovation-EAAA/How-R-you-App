@@ -1,0 +1,32 @@
+<div style="width: 100%"
+     ng-controller="multipleQuestionsController as vm">
+
+
+        <div ng-style="{ width: '100%',
+                        height: '100%' }"
+             ng-repeat="question in vm.questions">
+            <h4 class="flacc-title" style="clear: right">{{question.question}}</h4>
+            <div class="row responsive-md flacc-row">
+                <div class="col" ng-repeat="answer in question.answers">
+                    <button ng-click="vm.selectAnswer(question.propertyName, answer)"
+                            ng-class="{
+                                'button-dark': vm.selected(question,answer),
+                                'button-stable': !vm.selected(question,answer),
+                                 'button button-block flacc-button button-border': true}">
+                        {{answer}}
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div style="visibility: hidden" class="row">
+            <div style="height: 40px" class="col">
+                Dirty fix for resizing scrolling area
+            </div>
+        </div>
+
+
+
+</div>

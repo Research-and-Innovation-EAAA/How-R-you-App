@@ -1,0 +1,19 @@
+<div ng-controller="numberInputsController as vm">
+
+    <section class="padding-horizontal-50 top-margin">
+        <div style="width: 100%">
+            <label class="item item-input" ng-repeat="question in vm.questions">
+                <span class="input-label">{{question.question}}</span>
+                <input
+                        type="number"
+                        min="0"
+                        style="direction: rtl;"
+                        step="{{(question.decimal) ? 0.01 : 1}}"
+                        ng-model="vm.registration[question.propertyName]"
+                        ng-blur="vm.updateRegistration()">
+                <span class="input-label measurement-label">{{question.measure}}</span>
+            </label>
+        </div>
+    </section>
+
+</div>

@@ -31,7 +31,7 @@ function SimpleQuestionController($scope, $reactive, WizardHandler, $ionicScroll
    }
 
    vm.registration = Session.get('registration');
-
+   
    vm.question = config.question;
    vm.answers = config.answers;
    vm.propertyName = config.propertyName;

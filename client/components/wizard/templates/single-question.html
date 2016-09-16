@@ -1,0 +1,16 @@
+<div style="width: 100%" class="top-margin padding-horizontal-50"
+     ng-controller="singleQuestionController as vm">
+
+    <h3 class="center-horizontal">{{vm.question}}</h3>
+    <br>
+
+    <div class="padding-horizontal-50">
+        <button ng-repeat="answer in vm.answers"
+                ng-click="vm.selectAnswer(answer)"
+                ng-class="{
+                'button-dark': vm.isSelected(answer),
+                'button-stable': !vm.isSelected(answer),
+                'button button-block button-border': true}">{{answer}}
+        </button>
+    </div>
+</div>

@@ -487,9 +487,9 @@ function config($translateProvider) {
 
     });
 
-    $translateProvider.determinePreferredLanguage();
-    //$translateProvider.preferredLanguage('da_DK');
+    //$translateProvider.determinePreferredLanguage(); // select lang using device settings
+    $translateProvider.preferredLanguage('da_DK');
     $translateProvider.useSanitizeValueStrategy('escape'); // security setting
-    $translateProvider.fallbackLanguage(['en', 'da_DK']);
+    $translateProvider.fallbackLanguage(['en']);
 
 }

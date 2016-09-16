@@ -9,15 +9,17 @@ angular.module('leukemiapp')
 
         for (moduleNumber = 0; moduleNumber < Modules.length; moduleNumber++) {
             var moduleName = Modules[moduleNumber].name;
-
             service.modules[moduleName] = true;
         }
 
         const handle = Meteor.subscribe('userSettings');
+        const handle2 = Meteor.subscribe('customModules');
         Tracker.autorun(() => {
             const isReady = handle.ready();
-            console.log(`Handle is ${isReady ? 'ready' : 'not ready'}`);
-            if (isReady) {
+            const isReady2 = handle2.ready();
+
+            if (isReady && isReady2) {
+                console.log(CustomModules.find().fetch());
                 startup();
             }
         });
@@ -33,6 +35,8 @@ angular.module('leukemiapp')
         };
 
         function startup() {
+            addCustomModules();
+
             userModules = UserSettings.findOne({});  //userId: Meteor.userId()
             console.log("USER MODULES of " + Meteor.userId() + " " + JSON.stringify(userModules));
             if (!!Meteor.userId()) {
@@ -59,6 +63,23 @@ angular.module('leukemiapp')
             }
 
             setActiveModules();
+        }
+
+        function addCustomModules() {
+            CustomModules.find().forEach(function (item) {
+                for (var step in item.wizard.steps) {
+                    item.wizard.steps[step]["validation"] = () => true;
+                    console.log("step", item.wizard.steps[step]);
+                }
+
+                if (!item["frontPage"]) {
+                    var frontpage = {"iconUrl": "/question-mark.png", "barClass": "bar-positive"};
+                    item["frontPage"] = frontpage;
+                }
+
+                Modules.push(item);
+                service.modules[item.name] = true;
+            });
         }
 
         function setActiveModules() {
